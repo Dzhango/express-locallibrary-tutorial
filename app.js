@@ -16,7 +16,8 @@ var app = express();
 app.use(helmet());
 
 //Set up mongoose connection
-const local_lib_URL = "mongodb+srv://dzhangir:love4fun@cluster0.foljo.mongodb.net/local_library?retryWrites=true&w=majority";
+var dev_db_url = "mongodb+srv://dzhangir:love4fun@cluster0.foljo.mongodb.net/local_library?retryWrites=true&w=majority";
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 var mongoose = require('mongoose');
 var mongoDB = local_lib_URL;
